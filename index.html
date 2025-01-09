@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+    <link rel="icon" href="images/quiz.png" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/animate.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section class="quizSec">
+      <div class="container mt-5">
+        <div class="head w-100 dFlex my-5">
+          <h2
+            class="bg-white py-3 px-5 rounded-2 animate__animated animate__fadeInDown"
+            style="width: fit-content;"
+          >
+            Quiz App
+          </h2>
+        </div>
+        <div class="row w-100 justify-content-center">
+          <div class="col-md-9 col-12">
+            <form action="" class="w-100 animate__animated animate__fadeInLeft">
+              <div class="divInput mb-4">
+                <p class="mb-0 fw-bolder">
+                  Choose Category :
+                </p>
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  id="category"
+                >
+                  <option selected>Any Category</option>
+                  <option value="27">Animals</option>
+                  <option value="18">Science : computers</option>
+                  <option value="9">General Knowledge</option>
+                  <option value="22">Geography</option>
+                </select>
+              </div>
+              <div class="divInput mb-4">
+                <p class="mb-0 fw-bolder">
+                  Select Difficulty :
+                </p>
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  id="difficulty"
+                >
+                  <option selected>Any Difficulty</option>
+                  <option value="easy">Easy</option>
+                  <option value="medium">Medium</option>
+                  <option value="hard">Hard</option>
+                </select>
+              </div>
+              <div class="divInput mb-4">
+                <p class="mb-0 fw-bolder">
+                  Number Of Question :
+                </p>
+                <input type="number"  class="form-control w-100 py-2 px-3 rounded-2"  id="questionNumber">
+                </select>
+              </div>
+              <p id="errorMessage" class="alert alert-warning py-2 d-none">
+                Please fill the fields (Category - difficulty - question Number)......! </p>
+             <div class="divBtn w-100 dFlex">
+                 <button class="px-5 py-2 w-25 dFlex"
+                 style="letter-spacing: 1.5px ; font-size: 20px; text-transform: uppercase;
+                 border-radius: 6px;border-color: none; outline: none;" type="submit">Start</button>
+             </div>
+            </form>
+          </div>
+        
+          <div class="questionContainer w-100 dFlex mb-5">
+          <!--  -->
+
+          </div>
+          <div class="showScore w-100 dFlex mb-5">
+           <!-- --> 
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="js/all.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
