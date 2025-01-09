@@ -4,11 +4,18 @@ const category = document.getElementById("category");
 const difficulty = document.getElementById("difficulty");
 const questionNumber = document.getElementById("questionNumber");
 const questionContainer = document.querySelector(".quizSec .questionContainer");
+const loading = document.querySelector(".loading");
 let showScorePage = document.querySelector(".showScore");
 let errorMessage = document.getElementById("errorMessage");
 let questions;
 let myQuiz;
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    loading.classList.add("d-none");
+  }, 3000);
+});
 form.addEventListener("submit", async (e) => {
+  loading.classList.remove("d-none");
   e.preventDefault();
   const qNum = questionNumber.value;
   const categoryVal = category.value;
@@ -26,6 +33,8 @@ form.addEventListener("submit", async (e) => {
   } else {
     errorMessage.classList.remove("d-none");
   }
+  loading.classList.add("d-none");
+
   questionNumber.value = null;
   category.value = null;
   difficulty.value = null;
@@ -40,6 +49,7 @@ class Quiz {
   getData = async () => {
     try {
       // Make the fetch request
+      loading.classList.remove("d-none");
       let res = await fetch(
         `https://opentdb.com/api.php?amount=${this.questionNumber}&category=${this.category}&difficulty=${this.difficulty}&type=multiple`
       );
@@ -55,6 +65,7 @@ class Quiz {
       console.error("Fetch error:", error);
       errorMessage.classList.remove("d-none");
     }
+    loading.classList.add("d-none");
   };
 
   showScoreFunc = () => {
